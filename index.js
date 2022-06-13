@@ -23,6 +23,9 @@ app.get("/api", (req, res) => {
     message: process.env.MONGO_URI,
   });
 });
+app.get('/test', (req, res) => {
+  res.send('Hello World!');
+});
 
 app.use("/api/meetings", meetings);
 app.use("/api/users", users);
