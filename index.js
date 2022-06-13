@@ -18,10 +18,15 @@ app.get("/", (req, res) => {
   res.status(200).sendFile(__dirname + "/index.html");
 });
 
+app.get("/api", (req, res) => {
+  res.status(200).json({
+    message: process.env.MONGO_URI,
+  });
+});
+
 app.use("/api/meetings", meetings);
 app.use("/api/users", users);
 
 app.use(errorHandler);
 
 module.exports = app;
-
