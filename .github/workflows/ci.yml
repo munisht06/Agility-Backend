@@ -6,9 +6,12 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   build:
+    name: Test Node
     runs-on: ubuntu-latest
     strategy:
       matrix:
