@@ -5,6 +5,6 @@ app.get("/", (req, res) => {
   res.status(200).sendFile(__dirname + "/index.html");
 });
 
-app.listen(5000, () => {
-  console.log("Server started on port 500 0");
+app.listen(8000, () => {
+  console.log("Server started on port 5000");
 });
