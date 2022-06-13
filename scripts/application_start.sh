@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#give permission for everything in the agility-app-backenddirectory
-sudo chmod -R 777 /home/ec2-user/agility-app-backend
+#give permission for everything in the agility-backend-server directory
+sudo chmod -R 777 /home/ec2-user/agility-backend-server
 
 #navigate into our working directory where we have all our github files
-cd /home/ec2-user/agility-app-backend
+cd /home/ec2-user/agility-backend-server
 
 #add npm and node to path
 export NVM_DIR="$HOME/.nvm"	
@@ -15,4 +15,4 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 
 #start our node app in the background
-node app.js > app.out.log 2> app.err.log < /dev/null & 
+node server.js > app.out.log 2> app.err.log < /dev/null & 

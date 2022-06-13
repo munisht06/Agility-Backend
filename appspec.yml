@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/agility-app-backend
+    destination: /home/ec2-user/agility-backend-server
 hooks:
   ApplicationStop:
     - location: scripts/application_stop.sh
