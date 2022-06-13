@@ -2,11 +2,17 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu
+    destination: /home/ec2-user/agility-app-backend
 hooks:
-  AfterInstall:
-    - location: afterinstall.sh
-      timeout: 100
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 300
+      runas: ec2-user
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: ec2-user
   ApplicationStart:
-    - location: applicationstart.sh
-      timeout: 100
+    - location: scripts/application_start.sh
+      timeout: 300
+      runas: ec2-user
