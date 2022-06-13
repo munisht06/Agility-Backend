@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const colors = require("colors");
-const port = process.env.PORT || 5000;
+
 const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const meetings = require("./routes/meetingRoutes");
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //serve index.html for "/"
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.status(200).sendFile(__dirname + "/index.html");
 });
 app.use("/api/meetings", meetings);
 app.use("/api/users", users);
