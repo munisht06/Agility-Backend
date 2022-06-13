@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //serve index.html for "/"
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.status(200).sendFile(__dirname + "/index.html");
 });
 app.use("/api/meetings", meetings);
 app.use("/api/users", users);
