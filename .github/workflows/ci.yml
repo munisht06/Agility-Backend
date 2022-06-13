@@ -21,6 +21,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: create env files
+      run: |
+        touch .env
+        echo NODE_ENV=${{ secrets.development }} >> .env
+        echo PORT=${{ secrets.PORT }} >> .env
+        echo MONGO_URI=${{ secrets.MONGO_URI }} >> .env
+        echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env
     - run: npm ci
     - name: Run test
       run: npm test
